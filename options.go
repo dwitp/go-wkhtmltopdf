@@ -34,6 +34,7 @@ type globalOptions struct {
 	Readme            boolOption   //Output program readme
 	Title             stringOption //The title of the generated pdf file (The title of the first document is used if not specified)
 	Version           boolOption   //Output version information and exit
+	UserStyleSheet    stringOption //Specify a user style sheet, to load with every page
 }
 
 func (gopt *globalOptions) Args() []string {
@@ -292,6 +293,7 @@ func newGlobalOptions() globalOptions {
 		Readme:            boolOption{option: "readme"},
 		Title:             stringOption{option: "title"},
 		Version:           boolOption{option: "version"},
+		UserStyleSheet:    stringOption{option: "user-style-sheet"},
 	}
 }
 
